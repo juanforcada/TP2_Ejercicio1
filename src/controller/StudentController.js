@@ -75,4 +75,20 @@ export const StudentController = {
       ok: true,
     });
   },
+  getPromedioTotal: (req, res) => {
+    const totalAverageGrades = StudentService.getPromedioTotal();
+    if (!totalAverageGrades) {
+      res.status(404).json({
+        payload: null,
+        message: "No grades",
+        ok: false,
+      });
+      return;
+    }
+    res.status(200).json({
+      payload: `El promedio de la escuela fue de ${totalAverageGrades}`,
+      message: "Success",
+      ok: true,
+    });
+  },
 };

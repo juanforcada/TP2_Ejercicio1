@@ -24,3 +24,7 @@ Content-Type: application/json
   "id": "1",
   "notas": [8, 9, 10]
 }
+
+###
+
+GET http://127.0.0.1:3001/students/promedio-total

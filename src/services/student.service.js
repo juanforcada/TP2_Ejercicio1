@@ -1,5 +1,6 @@
 import { StudentRepository } from "../repository/student.repository.js";
 import { transformarStringEnArrayDeNumeros } from "../utils/StringHandler.js";
+import { combinarNArrays } from "../utils/ArrayHandler.js";
 import { promediar } from "../utils/Math.js";
 import { Student } from "../model/Student.js";
 
@@ -32,5 +33,13 @@ export const StudentService = {
     const updatedGrades = StudentRepository.uploadGrades(id, notas);
     if (!updatedGrades) return null;
     return updatedGrades;
+  },
+  getPromedioTotal: () => {
+    const students = StudentRepository.getAll();
+    if (!students) return null;
+    const grades = combinarNArrays(
+      students.filter((s) => Array.isArray(s.grades)).map((s) => s.grades)
+    );
+    return promediar(grades);
   },
 };

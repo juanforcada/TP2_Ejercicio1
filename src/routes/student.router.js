@@ -10,5 +10,6 @@ studentRouter.get(
 studentRouter.post("/student", StudentController.createOne);
 studentRouter.delete("/student/:id", StudentController.deleteOne);
 studentRouter.put("/upload-grades", StudentController.uploadGrades);
+studentRouter.get("/promedio-total", StudentController.getPromedioTotal);
 
 export { studentRouter };

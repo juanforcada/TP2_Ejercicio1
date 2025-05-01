@@ -1,6 +1,6 @@
 export function promediar(notas = []) {
-  if (array.length === 0) return null;
+  if (notas.length === 0) return null;
 
-  const suma = array.reduce((acumulador, elemento) => acumulador + elemento, 0);
-  return suma / array.length;
+  const suma = notas.reduce((acumulador, elemento) => acumulador + elemento, 0);
+  return suma / notas.length;
 }
