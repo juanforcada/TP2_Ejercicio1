@@ -1,8 +1,8 @@
-import fs from "node:fs/promises";
+import fs from "fs";
 
 export function leerArchivoComoString(ruta) {
   try {
-    return readFileSync(ruta, "utf8");
+    return fs.readFileSync(ruta, "utf8");
   } catch (error) {
     console.error(`Error al leer el archivo: ${error.message}`);
     return null;
