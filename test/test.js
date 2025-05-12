@@ -3,10 +3,6 @@ import { deepStrictEqual, strictEqual } from "assert";
 
 // Importar las funciones desde los tres archivos en la carpeta utils
 import {
-  leerArchivoComoString,
-  escribirTextoEnArchivo,
-} from "../src/utils/FileHandler.js";
-import {
   transformarStringEnArrayDeNumeros,
   transformarArrayDeNumerosAUnSoloString,
 } from "../src/utils/StringHandler.js";
